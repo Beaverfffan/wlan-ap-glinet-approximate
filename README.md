@@ -38,6 +38,10 @@ git clone https://github.com/Beaverfffan/wlan-ap-glinet-approximate
 
 cd wlan-ap-glinet-approximate
 
+sed -i '/CONFIG_CRYPTO_DEV_QCOM_ICE=/d' "$(git rev-parse --show-toplevel)/feeds/ipq807x_v5.4/ipq807x/config-5.4
+
+echo "# CONFIG_CRYPTO_DEV_QCOM_ICE is not set" >> "$(git rev-parse --show-toplevel)/feeds/ipq807x_v5.4/ipq807x/config-5.4
+
 echo 'CONFIG_BRIDGE_NETFILTER=y' >> "$(git rev-parse --show-toplevel)/feeds/ipq807x_v5.4/ipq60xx/config-5.4-qsdk"
 
 ./build.sh gl_ax1800.yml
