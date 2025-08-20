@@ -36,6 +36,8 @@ git clone https://github.com/Beaverfffan/wlan-ap-glinet-approximate
 
 cd wlan-ap-glinet-approximate
 
+echo 'CONFIG_BRIDGE_NETFILTER=y' >> "$(git rev-parse --show-toplevel)/feeds/ipq807x_v5.4/ipq60xx/config-5.4-qsdk"
+
 ./build.sh gl_ax1800.yml
 
 # 增加包
