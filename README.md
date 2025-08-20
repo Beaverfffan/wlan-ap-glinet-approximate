@@ -32,6 +32,8 @@ conda deactivate
 pip install PyYAML
 
 # 开始编译
+conda activate py311
+
 git clone https://github.com/Beaverfffan/wlan-ap-glinet-approximate
 
 cd wlan-ap-glinet-approximate
