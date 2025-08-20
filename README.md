@@ -18,8 +18,10 @@ conda create -n py311 python=3.11 -y
 # 查看进入退出环境
 conda activate py311
 #进入
+
 python -V 
 #Python 3.11.x
+
 conda deactivate
 #退出
 
@@ -28,13 +30,18 @@ pip install PyYAML
 
 # 开始编译
 git clone https://github.com/Beaverfffan/wlan-ap-glinet-approximate
+
 cd wlan-ap-glinet-approximate
+
 ./build.sh gl_ax1800.yml
 
 # 增加包
 cd openwrt
+
 ./scripts/feeds update -a
+
 ./scripts/feeds install -a
+
 make menuconfig
 
 
