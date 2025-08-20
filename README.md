@@ -1,3 +1,35 @@
+# 下载最新版 Miniconda（64 位 Linux）
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+
+# 执行安装脚本
+bash Miniconda3-latest-Linux-x86_64.sh
+
+#一路回车yes
+source ~/.bashrc
+
+# 创建py311环境
+conda create -n py311 python=3.11 -y
+
+# 查看进入退出环境
+conda activate py311   # 进入
+python -V              # Python 3.11.x
+conda deactivate       # 退出
+
+# 补充pip包
+pip install PyYAML
+
+# 开始编译
+git clone https://github.com/Beaverfffan/wlan-ap-glinet-approximate
+cd wlan-ap-glinet-approximate
+./build.sh gl_ax1800.yml
+
+# 增加包
+cd openwrt
+./scripts/feeds update -a
+./scripts/feeds install -a
+make menuconfig
+
+
 # OpenWiFi AP NOS
 
 OpenWrt-based access point network operating system (AP NOS) for TIP OpenWiFi.
