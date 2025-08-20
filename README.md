@@ -50,6 +50,39 @@ cd openwrt
 make menuconfig
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # OpenWiFi AP NOS
 
 OpenWrt-based access point network operating system (AP NOS) for TIP OpenWiFi.
