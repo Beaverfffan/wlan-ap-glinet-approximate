@@ -1,3 +1,6 @@
+请勿刷入编译出的固件，没人确定是否可用，存在直接完全损坏机器的风险。请仅使用软件包。
+现在默认编译出的是23.05 5.4.164 64bit软件包
+
 # 下载最新版 Miniconda（64 位 Linux）
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
