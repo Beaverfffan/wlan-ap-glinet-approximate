@@ -16,9 +16,12 @@ source ~/.bashrc
 conda create -n py311 python=3.11 -y
 
 # 查看进入退出环境
-conda activate py311   # 进入
-python -V              # Python 3.11.x
-conda deactivate       # 退出
+conda activate py311
+#进入
+python -V 
+#Python 3.11.x
+conda deactivate
+#退出
 
 # 补充pip包
 pip install PyYAML
