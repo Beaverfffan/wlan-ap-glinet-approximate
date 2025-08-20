@@ -49,6 +49,9 @@ cd openwrt
 
 make menuconfig
 
+# 解决内核hash问题以安装kmod
+https://forum.gl-inet.cn/forum.php?mod=viewthread&tid=1032
+
 
 
 
