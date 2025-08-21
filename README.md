@@ -47,17 +47,24 @@ echo 'CONFIG_NF_CONNTRACK_IPV4=m' >> "$(git rev-parse --show-toplevel)/feeds/ipq
 
 ./build.sh gl_ax1800.yml
 
-# 增加包
+# 进入op目录
 cd openwrt
-
-rm -rf feeds/packages/lang/golang
-
-git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
 
 ./scripts/feeds update -a
 
 ./scripts/feeds install -a
 
+# 更改golang
+rm -rf feeds/packages/lang/golang
+
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+
+# 增加golang-src的依赖
+sed -i '/TITLE+= (source files)/a\  DEPENDS+=+libstdcpp +libtiff' \
+    feeds/packages/lang/golang/golang/Makefile
+    
+
+# 选择软件包
 make menuconfig
 
 # 解决内核hash问题以安装kmod
