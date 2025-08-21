@@ -62,6 +62,9 @@ git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/l
 # 增加golang-src的依赖
 sed -i '/TITLE+= (source files)/a\  DEPENDS+=+libstdcpp +libtiff' \
     feeds/packages/lang/golang/golang/Makefile
+
+# 修复fuse3
+sed -i '/fuse3-utils\/usr\/bin\/fusermount3/d' feeds/packages/utils/fuse3/Makefile
     
 
 # 选择软件包
