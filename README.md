@@ -50,6 +50,10 @@ echo 'CONFIG_NF_CONNTRACK_IPV4=m' >> "$(git rev-parse --show-toplevel)/feeds/ipq
 # 增加包
 cd openwrt
 
+rm -rf feeds/packages/lang/golang
+
+git clone https://github.com/sbwml/packages_lang_golang -b 24.x feeds/packages/lang/golang
+
 ./scripts/feeds update -a
 
 ./scripts/feeds install -a
